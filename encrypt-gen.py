@@ -107,6 +107,9 @@ Passphrase with ', str(security_level_choice), 'characters: ', pass_string, '\
 
 
 
+
+
+
     again_or_not_loop = 1
     while again_or_not_loop == 1:
 
@@ -130,7 +133,16 @@ Passphrase with ', str(security_level_choice), 'characters: ', pass_string, '\
 
 
 
+
+
+
+
+
+
 if __name__ == "__main__":
     main() 
+
+
+
 
 
