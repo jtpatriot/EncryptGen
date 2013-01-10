@@ -144,6 +144,7 @@ Passphrase with ', str(security_level_choice), 'characters: ', pass_string, '\
 
 
     welcomeMessage()
+    printBlankLine(1)
     again_or_not_loop = 1
     while again_or_not_loop == 1:
 
