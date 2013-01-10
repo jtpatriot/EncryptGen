@@ -24,6 +24,14 @@ def main():
     def welcomeMessage():
         print """       -Welcome to The Encrypt0r-"""
         print """Let us help make your passwords more secure!"""
+
+
+    def stringInput():
+        global inputStringText
+        inputStringTextLoop = 1
+        inputStringText = raw_input('What is the word you want to be \
+turned into a password?\n\
+Input word or phrase: ')
     
 
     def security_level():
