@@ -38,6 +38,10 @@ Input word or phrase: ')
         for i, j in dic.iteritems():
             text = text.replace(i, j)
         return text
+
+
+    def printResults(results):
+        print 'The secured string is:', results
     
 
     def security_level():
