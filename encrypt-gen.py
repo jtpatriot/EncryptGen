@@ -134,9 +134,8 @@ Valid range is 1-6: ')
         list_of_chars = [random.choice(pass_chars) for n in xrange(security_level_choice)]
         pass_string = "".join(list_of_chars)
 
-        print '\n \
-Passphrase with ', str(security_level_choice), 'characters: ', pass_string, '\
-\n'
+        print \
+'Passphrase with ', str(security_level_choice), 'characters: ', pass_string, ''
         
 
 
@@ -149,8 +148,11 @@ Passphrase with ', str(security_level_choice), 'characters: ', pass_string, '\
     while again_or_not_loop == 1:
 
         security_level()
+        printBlankLine(1)
         security_chars()
+        printBlankLine(1)
         generate_passphrase(pass_chars, security_level_choice)
+        printBlankLine(1)
 
         again_or_not = raw_input('Would you like to do it again? (Y/n): ')
 
