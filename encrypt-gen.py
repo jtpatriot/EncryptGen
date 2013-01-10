@@ -32,6 +32,12 @@ def main():
         inputStringText = raw_input('What is the word you want to be \
 turned into a password?\n\
 Input word or phrase: ')
+
+
+    def charReplace(text, dic):
+        for i, j in dic.iteritems():
+            text = text.replace(i, j)
+        return text
     
 
     def security_level():
