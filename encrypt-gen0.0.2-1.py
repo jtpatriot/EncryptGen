@@ -1,8 +1,7 @@
 # Password Generator of Random Text
-# Version 0.0.2-1
-# Changes: Removed the import string command, as the string
-# function was removed.
-#
+# Version 0.0.2-2
+# Changes: in security_chars function, changed line 60 from range(1,6) to
+# range(1,7) to encompass the 6 correctly, didn't allow option 6 before.
 #
 #
 import random
@@ -58,7 +57,7 @@ security, in number of characters?\
         while security_chars_loop == 1:
             try:
                 int(security_chars_choice)
-                while int(security_chars_choice) not in range(1,6):
+                while int(security_chars_choice) not in range(1,7):
                     security_chars_choice = raw_input('Invalid number choice! \
 Valid range is 1-6: ')
                 break
