@@ -123,7 +123,7 @@ Valid range is 1-3: ')
 		print '4) Upper and lowercase alphabet. (A-Z,a-z)'
 		print '5) Lowercase alphabet with digits. (a-z,0-9)'
 		print '6) Digits. (0-9)'
-		security_chars_choice = raw_input('Enter selection (1-6):')
+		security_chars_choice = raw_input('Enter selection (1-6): ')
 		
 		security_chars_loop = 1
 		while security_chars_loop == 1:
