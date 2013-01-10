@@ -1,6 +1,6 @@
 # Password Generator of Random Text
-# Version 0.0.2-3
-# Changes: Added printBlankLine function, for the future.
+# Version 0.0.2-4
+# Changes:
 # 
 #
 #
@@ -144,8 +144,8 @@ Valid range is 1-6: ')
 
     welcomeMessage()
     printBlankLine(1)
-    again_or_not_loop = 1
-    while again_or_not_loop == 1:
+    program_loop = 1
+    while program_loop == 1:
 
         security_level()
         printBlankLine(1)
@@ -153,19 +153,24 @@ Valid range is 1-6: ')
         printBlankLine(1)
         generate_passphrase(pass_chars, security_level_choice)
         printBlankLine(1)
+		
+		repeat_question = 1
+		while repeat_question == 1
+			again_or_not = raw_input('Would you like to do it again? (Y/n): ')
 
-        again_or_not = raw_input('Would you like to do it again? (Y/n): ')
+			if again_or_not in ('y','ye','yes','Y','YES'):
+				program_loop = 1
+				repeat_question = 0
+				print '\n\nRestarting...\n'
 
-        if again_or_not in ('y','ye','yes','Y','YES'):
-            again_or_not_loop = 1
-            print '\n\nRestarting...\n'
+			elif again_or_not in ('n','no','nope','N','NO'):
+				program_loop = 0
+				repeat_question = 0
+				print '\n\nExiting...\n'
 
-        elif again_or_not in ('n','no','nope','N','NO'):
-            again_or_not_loop = 0
-            print '\n\nExiting...\n'
-
-        else:
-            print 'Please select yes or no answer.'
+			else:
+				print 'Please select yes or no answer.'
+				repeat_question = 1
 
 
 
