@@ -14,6 +14,11 @@ def main():
         while amount >> 0:
             print ''
             amount = amount - 1
+
+
+    def welcomeMessage():
+        print """       -Welcome to The Encrypt0r-"""
+        print """Let us help make your passwords more secure!"""
     
 
     def security_level():
