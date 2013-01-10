@@ -16,6 +16,11 @@ def main():
             amount = amount - 1
 
 
+    def replacerDict():
+        global replacers
+        replacers = {' ':'', 'a':'@', 'e':'3', '':'', 'o':'0', 's':'5', 't':'7'}
+
+
     def welcomeMessage():
         print """       -Welcome to The Encrypt0r-"""
         print """Let us help make your passwords more secure!"""
