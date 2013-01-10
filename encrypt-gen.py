@@ -26,6 +26,39 @@ def main():
         print """Let us help make your passwords more secure!"""
 
 
+    def passwordType():
+		print """What kind of password do you want?"""
+		print """1) Strictly random."""
+		print """2) Randomized word or phrase chosen by you."""
+		print """3) Combination (most secure)."""
+		password_type_choice = raw_input("Enter a number selection:")
+		
+		password_type_loop = 1
+        while password_type_loop == 1:
+            try:
+                int(password_type_choice)
+                while int(password_type_choice) not in range(1,4):
+                    password_type_choice = raw_input('Invalid number choice! \
+Valid range is 1-3: ')
+                break
+                password_type_loop = 0
+            except ValueError:
+                password_type_choice = raw_input('You must specify a number! \
+Valid range is 1-3: ')
+                
+        if password_type_choice == '1':
+            
+            
+        elif password_type_choice == '2':
+            
+            
+        elif password_type_choice == '3':
+            
+
+        return password_type_choice
+	
+
+
     def stringInput():
         global inputStringText
         inputStringTextLoop = 1
