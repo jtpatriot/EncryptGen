@@ -154,23 +154,23 @@ Valid range is 1-6: ')
         generate_passphrase(pass_chars, security_level_choice)
         printBlankLine(1)
 		
-		repeat_question = 1
-		while repeat_question == 1
-			again_or_not = raw_input('Would you like to do it again? (Y/n): ')
+        repeat_question = 1
+        while repeat_question == 1:
+            again_or_not = raw_input('Would you like to do it again? (Y/n): ')
 
-			if again_or_not in ('y','ye','yes','Y','YES'):
-				program_loop = 1
-				repeat_question = 0
-				print '\n\nRestarting...\n'
+            if again_or_not in ('y','ye','yes','Y','YES'):
+                program_loop = 1
+                repeat_question = 0
+                print '\n\nRestarting...\n'
 
-			elif again_or_not in ('n','no','nope','N','NO'):
-				program_loop = 0
-				repeat_question = 0
-				print '\n\nExiting...\n'
+            elif again_or_not in ('n','no','nope','N','NO'):
+                program_loop = 0
+                repeat_question = 0
+                print '\n\nExiting...\n'
 
-			else:
-				print 'Please select yes or no answer.'
-				repeat_question = 1
+            else:
+                print 'Please select yes or no answer.'
+                repeat_question = 1
 
 
 
