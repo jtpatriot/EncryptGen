@@ -193,6 +193,16 @@ Valid range is 1-6: ')
 			printBlankLine(1)
 			generate_passphrase(pass_chars, security_level_choice)
 			printBlankLine(1)
+		elif passwordType_selection in ('2'):
+			stringInput()
+			replacerDict()
+			results = charReplace(inputStringText, replacers)
+			printBlankLine(1)
+			printResults(results)
+			printBlankLine(1)
+		elif passwordType_selection in ('3'):
+			print 'This feature is still being worked on.'
+			
 		
 		
 		
