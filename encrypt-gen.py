@@ -1,13 +1,19 @@
 # Password Generator of Random Text
-# Version 0.0.2-2
-# Changes: in security_chars function, changed line 60 from range(1,6) to
-# range(1,7) to encompass the 6 correctly, didn't allow option 6 before.
+# Version 0.0.2-3
+# Changes: Added printBlankLine function, for the future.
+# 
 #
 #
 import random
 
 
 def main():
+
+
+    def printBlankLine(amount):
+        while amount >> 0:
+            print ''
+            amount = amount - 1
     
 
     def security_level():
