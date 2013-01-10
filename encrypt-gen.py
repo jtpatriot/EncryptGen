@@ -214,14 +214,19 @@ Valid range is 1-6: ')
 			if again_or_not in ('y','ye','yes','Y','YES'):
 				program_loop = 1
 				repeat_question = 0
-				print '\n\nRestarting...\n'
+				printBlankLine(1)
+				print '...Restarting...'
+				printBlankLine(1)
 
 			elif again_or_not in ('n','no','nope','N','NO'):
 				program_loop = 0
 				repeat_question = 0
-				print '\n\nExiting...\n'
+				printBlankLine(1)
+				print '...Exiting...'
+				printBlankLine(1)
 
 			else:
+				printBlankLine(1)
 				print 'Please select yes or no answer.'
 				repeat_question = 1
 
