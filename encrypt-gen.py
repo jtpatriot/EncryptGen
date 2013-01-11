@@ -1,6 +1,6 @@
-# Password Generator of Random Text
-# Version 0.0.2-4
-# Changes:
+# Password Generator
+# 
+# 
 # 
 #
 #
