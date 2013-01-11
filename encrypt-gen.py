@@ -161,7 +161,7 @@ Valid range is 1-6: ')
 		return pass_chars
 
 
-# Ask for symbols eventually
+# Ask for symbols eventually...
 
 	def generate_passphrase(characters, length):
 		listChars = [random.choice(characters) for n in xrange(length)]
@@ -170,8 +170,7 @@ Valid range is 1-6: ')
 		
 
 
-
-
+# Begin Program #
 
 	welcomeMessage()
 	printBlankLine(2)
@@ -196,9 +195,6 @@ Valid range is 1-6: ')
 		elif passwordType_selection in ('3'):
 			print 'This feature is still being worked on.'
 			
-		
-		
-		
 		
 		repeat_question = 1
 		while repeat_question == 1:
@@ -229,13 +225,7 @@ Valid range is 1-6: ')
 
 
 
-
-
-
 if __name__ == "__main__":
 	main() 
-
-
-
 
 
