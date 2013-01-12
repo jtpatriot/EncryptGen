@@ -46,7 +46,6 @@ def main():
         return choice
     
 
-
     def stringInput():
         print 'What is the word you want to be turned into a password?'
         string = raw_input('Input word or phrase: ')
@@ -119,27 +118,27 @@ def main():
             except ValueError:
                 choice = raw_input('You must specify a number! Valid range is 1-6: ')
                 
-        if choice == '1':
+        if choice in ('1'):
             pass_chars = hex_string_low
             print hex_true_str
                 
-        elif choice == '2':
+        elif choice in ('2'):
             pass_chars = alphabet_string_low
             print alph_low_true_str
                 
-        elif choice == '3':
+        elif choice in ('3'):
             pass_chars = alphabet_string_up
             print alph_up_true_str
                 
-        elif choice == '4':
+        elif choice in ('4'):
             pass_chars = alphabet_string_low_up
             print alph_low_true_str,alph_up_true_str
                 
-        elif choice == '5':
+        elif choice in ('5'):
             pass_chars = alphabet_string_low + digit_string
             print alph_low_true_str,digit_true_str
                 
-        elif choice == '6':
+        elif choice in ('6'):
             pass_chars = digit_string
             print digit_true_str
 
