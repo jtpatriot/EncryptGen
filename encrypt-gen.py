@@ -17,7 +17,7 @@ def main():
 
 
     def replacerDict():
-        replacers = {' ':'', 'a':'@', 'e':'3', '':'', 'o':'0', 's':'5', 't':'7'}
+        replacers = {' ':'', 'a':'@', 'e':'3', 'o':'0', 's':'5', 't':'7'}
         return replacers
 
 
