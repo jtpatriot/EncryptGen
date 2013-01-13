@@ -151,6 +151,28 @@ def main():
         listChars = [random.choice(characters) for n in xrange(length)]
         result = "".join(listChars)
         print 'Passphrase with ', str(length), 'characters: ', result, ''
+
+
+    def mode1():
+        pass_chars = security_chars()
+        printBlankLine(1)
+        security_level_choice = security_level()
+        printBlankLine(1)
+        generate_passphrase(pass_chars, security_level_choice)
+        printBlankLine(1)
+        
+
+    def mode2():
+        inputStringText = stringInput()
+        replacers = replacerDict()
+        results = charReplace(inputStringText, replacers)
+        printBlankLine(1)
+        printResults(results)
+        printBlankLine(1)
+        
+
+    def mode3():
+        print 'This feature is still being worked on.'
         
 
 
@@ -163,21 +185,11 @@ def main():
         passwordType_selection = passwordType()
         printBlankLine(1)
         if passwordType_selection in ('1'):
-            pass_chars = security_chars()
-            printBlankLine(1)
-            security_level_choice = security_level()
-            printBlankLine(1)
-            generate_passphrase(pass_chars, security_level_choice)
-            printBlankLine(1)
+            mode1()
         elif passwordType_selection in ('2'):
-            inputStringText = stringInput()
-            replacers = replacerDict()
-            results = charReplace(inputStringText, replacers)
-            printBlankLine(1)
-            printResults(results)
-            printBlankLine(1)
+            mode2()
         elif passwordType_selection in ('3'):
-            print 'This feature is still being worked on.'
+            mode3()
             
         
         repeat_question = 1
