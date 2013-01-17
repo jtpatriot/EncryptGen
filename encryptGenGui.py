@@ -33,21 +33,21 @@ def security_level(number):
 def containStrings(check1, check2, check3):
     pass_chars = StringVar('')
     if(check1 == 1):
-        print "check1 is on"
-        pass_chars.set('1234567890')
+        pass_chars.set(pass_chars.get() + '1234567890')
     if(check2 == 1):
-        print "check2 is on"
-        pass_chars.set('abcdefghijklmnopqrstuvwxyz')
+        pass_chars.set(pass_chars.get() + 'abcdefghijklmnopqrstuvwxyz')
     if(check3 == 1):
-        print "check3 is on"
-        pass_chars.set('ABCDEFGHIJKLMNOPQRSTUVWXYZ')
+        pass_chars.set(pass_chars.get() + 'ABCDEFGHIJKLMNOPQRSTUVWXYZ')
     return pass_chars.get()
 
 
 def randomizeJoin(x, y):
-    listed = [random.choice(x) for n in xrange(y)]
-    results = "".join(listed)
-    return results
+    try:
+        listed = [random.choice(x) for n in xrange(y)]
+        results = "".join(listed)
+        return results
+    except IndexError:
+        return 'Error: Please make a checkbox selection.'
 
 
 
