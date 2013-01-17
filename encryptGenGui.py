@@ -44,12 +44,17 @@ def containStrings():
     return pass_chars
 
 
+def randomizeJoin(x, y):
+    listed = [random.choice(x) for n in xrange(y)]
+    results = "".join()
+    printStr.set()
+
+
+
 def generate():    
     passChars.set(containStrings())
     length.set(security_level(numCount))
-    listChars = [random.choice(passChars) for n in xrange(length)]
-    result = "".join(listChars)
-    printStr.set(result)
+    randomizeJoin(passChars, length)
 
 
 root = Tk()
@@ -76,8 +81,6 @@ check3 = IntVar(0)
 
 length = StringVar('')
 passChars = StringVar('')
-listChars = []
-result = StringVar('')
 
 endNumber = IntVar()
 
