@@ -45,16 +45,17 @@ def containStrings():
 
 
 def randomizeJoin(x, y):
+    y = int(y) # ValueError: invalid literal for int() with base 10: 'PY_VAR8'
     listed = [random.choice(x) for n in xrange(y)]
-    results = "".join()
-    printStr.set()
+    results = "".join(listed)
+    printStr.set(results)
 
 
 
 def generate():    
     passChars.set(containStrings())
-    length.set(security_level(numCount))
-    randomizeJoin(passChars, length)
+    length.set(security_level(numCount.get()))
+    randomizeJoin(passChars.get(), length.get())
 
 
 root = Tk()
