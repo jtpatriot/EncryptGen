@@ -27,35 +27,34 @@ def security_level(number):
         endNumber.set(number)
     except:
         printStr.set('Please enter a number above.')
-    return endNumber
+    return endNumber.get()
         
 
-def containStrings():
+def containStrings(check1, check2, check3):
     pass_chars = StringVar('')
-    if(check1.get() == 1):
+    if(check1 == 1):
         print "check1 is on"
         pass_chars.set('1234567890')
-    if(check2.get() == 1):
+    if(check2 == 1):
         print "check2 is on"
         pass_chars.set('abcdefghijklmnopqrstuvwxyz')
-    if(check3.get() == 1):
+    if(check3 == 1):
         print "check3 is on"
         pass_chars.set('ABCDEFGHIJKLMNOPQRSTUVWXYZ')
-    return pass_chars
+    return pass_chars.get()
 
 
 def randomizeJoin(x, y):
-    y = int(y) # ValueError: invalid literal for int() with base 10: 'PY_VAR8'
     listed = [random.choice(x) for n in xrange(y)]
     results = "".join(listed)
-    printStr.set(results)
+    return results
 
 
 
 def generate():    
-    passChars.set(containStrings())
+    passChars.set(containStrings(check1.get(), check2.get(), check3.get()))
     length.set(security_level(numCount.get()))
-    randomizeJoin(passChars.get(), length.get())
+    printStr.set(randomizeJoin(passChars.get(), length.get()))
 
 
 root = Tk()
@@ -80,7 +79,7 @@ check1 = IntVar(0)
 check2 = IntVar(0)
 check3 = IntVar(0)
 
-length = StringVar('')
+length = IntVar()
 passChars = StringVar('')
 
 endNumber = IntVar()
