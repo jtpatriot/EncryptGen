@@ -115,28 +115,6 @@ modeframe.grid(column=1, row=3, sticky=(W, E, S))
 
 modeframe.grid_propagate(0)
 
-numCount = StringVar('')
-printStr = StringVar('')
-description = StringVar('')
-
-check1 = IntVar(0)
-check2 = IntVar(0)
-check3 = IntVar(0)
-check4 = IntVar(0)
-
-length = IntVar()
-passChars = StringVar('')
-
-endNumber = IntVar()
-
-description.set("""Modes:\n"""\
-"""1) Generate a random character password.\n"""\
-"""2) Randomize a specific word or phrase.\n"""\
-"""3) Combination of 1 and 2.""")
-
-printStr.set('')
-
-
 mode1Button = ttk.Button(mainframe, text="Mode 1", command=displayMode1)
 mode1Button.grid(column=1, row=1, sticky=(W, N))
 mode2Button = ttk.Button(mainframe, text="Mode 2", command=displayMode2)
@@ -144,8 +122,30 @@ mode2Button.grid(column=1, row=1, sticky=(N))
 mode3Button = ttk.Button(mainframe, text="Mode 3", command=displayMode3)
 mode3Button.grid(column=1, row=1, sticky=(E, N))
 
+description = StringVar('')
+description.set("""Modes:\n"""\
+"""1) Generate a random character password.\n"""\
+"""2) Randomize a specific word or phrase.\n"""\
+"""3) Combination of 1 and 2.""")
 descriptionLabel = ttk.Label(mainframe, textvariable=description)
 descriptionLabel.grid(column=1, row=2, sticky=N)
+
+
+### Mode 1 variables
+numCount = StringVar('')
+printStr = StringVar('')
+
+check1 = IntVar(0)
+check2 = IntVar(0)
+check3 = IntVar(0)
+
+length = IntVar()
+passChars = StringVar('')
+
+endNumber = IntVar()
+
+printStr.set('')
+####################
 
 
 ### Mode 1 objects
@@ -159,6 +159,9 @@ mode1Check3 = ttk.Checkbutton(modeframe, text="Uppercase", variable=check3)
 mode1Generate = ttk.Button(modeframe, text="Generate", command=generate)
 mode1Results = ttk.Entry(modeframe, textvariable=printStr)
 ##################
+
+### Mode 2 objects
+textToMix_entry = ttk.Entry(modeframe, width=42, textvariable=textToMix)
 
 
 for child in mainframe.winfo_children(): child.grid_configure(padx=5, pady=5)
