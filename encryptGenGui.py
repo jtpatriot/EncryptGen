@@ -16,11 +16,15 @@ def displayMode1():
     mode1Check3.grid(column=2, row=2, sticky=(E, N))
     mode1Generate.grid(column=1, row=3, sticky=NW)
     mode1Results.grid(column=2, row=3, sticky=(W, E, N))
+    numCount_entry.focus()
     
 
 def displayMode2():
     removeMode1()
     removeMode3()
+    textToMix_entry.grid(column=2, row=1, sticky=(W, E, N))
+    mode2Result_box.grid(column=2, row=2, sticky=(W, N))
+    mode2Generate.grid(column=1, row=2, sticky=(W, N))
     
 
 def displayMode3():
@@ -90,10 +94,21 @@ def randomizeJoin(x, y):
         return 'Error: Please make a checkbox selection.'
 
 
-def generate():    
+def mode2combiner(x, y):
+    List = [x,y]
+    return "".join(List)
+
+
+def generateMode1():    
     passChars.set(containStrings(check1.get(), check2.get(), check3.get()))
     length.set(security_level(numCount.get()))
     printStr.set(randomizeJoin(passChars.get(), length.get()))
+
+    
+def generateMode2():    
+    hello = 'hello '
+    world = 'world'
+    mode2results.set(mode2combiner(hello, world))
 
 
 root = Tk()
@@ -108,11 +123,7 @@ mainframe.rowconfigure(3)
 mainframe.grid_propagate(0)
 
 modeframe = ttk.Frame(mainframe, padding="3 3 12 12", width=480, height=200)
-#mode2frame = ttk.Frame(mainframe, padding="3 3 12 12", width=480, height=200)
-#mode3frame = ttk.Frame(mainframe, padding="3 3 12 12", width=480, height=200)
-
 modeframe.grid(column=1, row=3, sticky=(W, E, S))
-
 modeframe.grid_propagate(0)
 
 mode1Button = ttk.Button(mainframe, text="Mode 1", command=displayMode1)
@@ -134,40 +145,42 @@ descriptionLabel.grid(column=1, row=2, sticky=N)
 ### Mode 1 variables
 numCount = StringVar('')
 printStr = StringVar('')
-
 check1 = IntVar(0)
 check2 = IntVar(0)
 check3 = IntVar(0)
-
 length = IntVar()
 passChars = StringVar('')
-
 endNumber = IntVar()
+####################
 
-printStr.set('')
+
+### Mode 2 variables
+textToMix = StringVar('')
+mode2results = StringVar('')
 ####################
 
 
 ### Mode 1 objects
 numCount_entry = ttk.Entry(modeframe, width=42, textvariable=numCount)
 numCount_label = ttk.Label(modeframe, text="Number of\nCharacters:")
-
 mode1Check1 = ttk.Checkbutton(modeframe, text="Numbers", variable=check1)
 mode1Check2 = ttk.Checkbutton(modeframe, text="Lowercase", variable=check2)
 mode1Check3 = ttk.Checkbutton(modeframe, text="Uppercase", variable=check3)
-
-mode1Generate = ttk.Button(modeframe, text="Generate", command=generate)
+mode1Generate = ttk.Button(modeframe, text="Generate", command=generateMode1)
 mode1Results = ttk.Entry(modeframe, textvariable=printStr)
 ##################
 
+
 ### Mode 2 objects
 textToMix_entry = ttk.Entry(modeframe, width=42, textvariable=textToMix)
+mode2Result_box = ttk.Entry(modeframe, textvariable=mode2results)
+mode2Generate = ttk.Button(modeframe, text="Generate", command=generateMode2)
+##################
 
 
 for child in mainframe.winfo_children(): child.grid_configure(padx=5, pady=5)
 
-numCount_entry.focus()
-root.bind('<Return>', generate)
+#root.bind('<Return>', generate)
 
 root.mainloop()
 
