@@ -39,11 +39,11 @@ def removeMode1():
 
 
 def removeMode2():
-    print ''
+    good = 'good'
 
 
 def removeMode3():
-    print ''
+    bad = 'bad'
 
 
 def replacerDict():
@@ -90,7 +90,6 @@ def randomizeJoin(x, y):
         return 'Error: Please make a checkbox selection.'
 
 
-
 def generate():    
     passChars.set(containStrings(check1.get(), check2.get(), check3.get()))
     length.set(security_level(numCount.get()))
@@ -99,7 +98,6 @@ def generate():
 
 root = Tk()
 root.title("EncryptGen")
-
 
 mainframe = ttk.Frame(root, padding="3 3 12 12", width=500, height=300)
 mainframe.grid(column=0, row=0, sticky=(N, W, E, S))
@@ -150,7 +148,7 @@ descriptionLabel = ttk.Label(mainframe, textvariable=description)
 descriptionLabel.grid(column=1, row=2, sticky=N)
 
 
-### Mode 1 objects         ###
+### Mode 1 objects
 numCount_entry = ttk.Entry(modeframe, width=42, textvariable=numCount)
 numCount_label = ttk.Label(modeframe, text="Number of\nCharacters:")
 
@@ -160,9 +158,7 @@ mode1Check3 = ttk.Checkbutton(modeframe, text="Uppercase", variable=check3)
 
 mode1Generate = ttk.Button(modeframe, text="Generate", command=generate)
 mode1Results = ttk.Entry(modeframe, textvariable=printStr)
-###############################
-
-
+##################
 
 
 for child in mainframe.winfo_children(): child.grid_configure(padx=5, pady=5)
@@ -171,6 +167,5 @@ numCount_entry.focus()
 root.bind('<Return>', generate)
 
 root.mainloop()
-
 
 
